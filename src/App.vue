@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { onMounted } from 'vue'
+import { supabase } from '@/services/supabase'
+
+onMounted(async () => {
+  let { data: todos, error } = await supabase.from('todos').select('*')
+
+  console.log('todos', todos)
+  console.log('error', error)
+})
 </script>
 
 <template>
