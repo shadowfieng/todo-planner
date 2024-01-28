@@ -4,7 +4,7 @@ import AppAside from './AppAside.vue'
 <template>
   <div class="flex h-dvh">
     <AppAside />
-    <div class="flex-grow">
+    <div class="flex-grow p-4">
       <header>header</header>
       <main><slot /></main>
     </div>
